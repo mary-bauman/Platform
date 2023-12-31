@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpmfcgih2bb2d"]
+
+[ext_resource type="Script" path="res://Terrain.gd" id="1_v42p1"]
+[ext_resource type="PackedScene" uid="uid://c2uiaplvef8k8" path="res://Player_scene.tscn" id="2_70roy"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Terrain" type="StaticBody2D" parent="."]
+position = Vector2(196.832, 164.74)
+script = ExtResource("1_v42p1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain"]
+polygon = PackedVector2Array(-234.832, 114.26, -24.8316, 200.26, 148.168, 178.26, 245.168, 253.26, 325.168, 278.26, 350.168, 403.26, 435.168, 429.26, 492.168, 462.26, 673.168, 317.26, 754.168, 359.26, 935.168, 218.26, 1011.17, 238.26, 1016.17, 511.26, -281.832, 510.26)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/CollisionPolygon2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_70roy")]
